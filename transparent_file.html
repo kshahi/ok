@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Taking Man</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <style>
+        .nav-tabs .nav-link {
+            color: gray;
+        }
+
+        .nav-tabs .nav-link.active {
+            color: #0080FF;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar bg-primary" data-bs-theme="dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">AI</a>
+    </div>
+</nav>
+<div class="container-fluid my-5">
+    <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <button class="nav-link active fw-bold" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
+                    type="button" role="tab" aria-controls="nav-home" aria-selected="true">Anime Character
+            </button>
+            <button class="nav-link fw-bold" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
+                    type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Transparent Anime
+                Character
+            </button>
+            <button class="nav-link fw-bold" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact"
+                    type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Real Character
+            </button>
+        </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
+             tabindex="0">
+            <div class="row mt-4 row-cols-auto">
+                <div class="col text-center">
+                    <div class="card" style="max-width:640px">
+                        <div class="mt-2 fw-semibold">Anime character embedded with a background image.</div>
+                        <div class="card-body">
+                            <div style="font-family: sans-serif;">
+                                <video id="myVideo1" class="object-fit-contain" width="100%" height="360" loop>
+                                    <source src="https://earth9hero.s3.us-east-2.amazonaws.com/development/ai/Scene+-+Alex+2.mp4"
+                                            type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div class="mt-2">
+                                    <button type="button" id="playButton1" class="btn btn-primary">Play Video</button>
+                                    <button type="button" id="pauseButton1" class="btn btn-secondary">Pause Video
+                                    </button>
+                                    <button type="button" id="restartButton1" class="btn btn-outline-success">Restart
+                                        Video
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="my-2 fw-semibold">Steps (Size: 18.6MB)</div>
+                    <ol class="list-group list-group-numbered">
+                        <li class="list-group-item">
+                            Open new or existing Project in <a
+                                href="https://www.adobe.com/products/character-animator.html">Adobe Character
+                            Animator</a>
+                        </li>
+                        <li class="list-group-item">
+                            Create or Import Puppet in project and create scene.
+                        </li>
+                        <li class="list-group-item">
+                            Import Audio File(mp3) and Drag into scene.
+                        </li>
+                        <li class="list-group-item">
+                            Import Background Image and Drag into scene.
+                        </li>
+                        <li class="list-group-item">
+                            Under Record Section, Click on <code>timeline > compute lip sync from audio </code>. it will make lip sync
+                            on puppet based on audio.
+                        </li>
+                        <li class="list-group-item">
+                            We can customize puppet's eye, face and body movement.
+                        </li>
+                        <li class="list-group-item">
+                            Finally export to desire location. Output will be in MP4 format.
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+            <div class="row mt-4 row-cols-auto">
+                <div class="col text-center">
+                    <div class="card" style="width:640px">
+                        <div class="mt-2 fw-semibold">Transparent Anime character. We can set any background image or any</div>
+                        <div class="card-body">
+                            <div style="font-family: sans-serif;">
+                                <div class="relative" style="font-family: sans-serif; width: 100%; height: 350px">
+                                    <div style="position:absolute">
+                                        <video id="myVideo2" class="object-fit-contain" width="100%" height="100%" loop>
+                                            <source src="https://earth9hero.s3.us-east-2.amazonaws.com/development/ai/transparent_video.webm"
+                                                    type="video/webm">
+                                        </video>
+                                    </div>
+                                    <p>
+                                        This is background. This is background. This is background. This is background.
+                                        This is background. This is background. This is background. This is background.
+                                        This is background. This is background. This is background. This is background.
+                                        This is background. This is background. This is background. This is background.
+                                        This is background. This is background. This is background. This is background.
+                                        This is background. This is background. This is background. This is background.
+                                        This is background. This is background. This is background. This is background.
+                                        This is background. This is background. This is background. This is background.
+                                        This is background. This is background. This is background. This is background.
+                                        This is background. This is background. This is background. This is background.
+                                        This is background. This is background. This is background. This is background.
+                                        This is background. This is background. This is background.
+                                    </p>
+                                </div>
+                                <div class="mt-2">
+                                    <button type="button" id="playButton2" class="btn btn-primary">Play Video</button>
+                                    <button type="button" id="pauseButton2" class="btn btn-secondary">Pause Video
+                                    </button>
+                                    <button type="button" id="restartButton2" class="btn btn-outline-success">Restart
+                                        Video
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-md-7">
+                    <div class="my-2 fw-semibold">Steps (Size: 2.6MB)</div>
+                    <ol class="list-group list-group-numbered">
+                        <li class="list-group-item">
+                            This transparent character video is created from previous video. We can see significant reduction in size(From 18.6MB to 2.6MB).
+                        </li>
+                        <li class="list-group-item">
+                            Open new or existing Project in <a
+                                href="https://www.adobe.com/products/character-animator.html">Adobe Character
+                            Animator</a>
+                        </li>
+                        <li class="list-group-item">
+                            Create or Import Puppet in project and create scene.
+                        </li>
+                        <li class="list-group-item">
+                            Import Audio File(mp3) and Drag into scene.
+                        </li>
+                        <li class="list-group-item">
+                            Select background color 'GREEN'.
+                        </li>
+                        <li class="list-group-item">
+                            Under Record Section, Click on timeline > compute lip sync from audio. it will make lip sync
+                            on character based on audio.
+                        </li>
+                        <li class="list-group-item">
+                            We can customize puppet's eye, face and body movement.
+                        </li>
+                        <li class="list-group-item">
+                            Export to desire location. Output will be in MP4 format.
+                        </li>
+                        <li class="list-group-item">
+                            Download <a href="https://www.ffmpeg.org/">FFmpeg</a> and unzip it. There will be ffmpeg.exe
+                            file under bin folder. We can set this location in environment variable to be able to
+                            execute ffmpeg
+                            command globally.
+                        </li>
+                        <li class="list-group-item">
+                            Run Command: <code> ffmpeg -i input_video.mp4 -vf "chromakey=green:similarity=0.1:blend=0.0"
+                            -c:v libvpx-vp9 -pix_fmt yuva420p output_video.webm</code>
+                        </li>
+                        <li class="list-group-item">
+                            Make sure to replace correct input and output file locations. Output video extension will be in
+                            <code>webm</code>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">...
+        </div>
+        <div class="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab" tabindex="0">
+            ...
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+<script>
+    document.getElementById('playButton1').addEventListener('click', function () {
+        const video = document.getElementById('myVideo1');
+        video.muted = false;
+        video.play();
+    });
+
+    document.getElementById('pauseButton1').addEventListener('click', function () {
+        const video = document.getElementById('myVideo1');
+        video.pause();
+    });
+    document.getElementById('restartButton1').addEventListener('click', function () {
+        const video = document.getElementById('myVideo1');
+        video.currentTime = 0; // Set the current playback time to the beginning
+        video.play(); // Play the video
+    });
+
+    document.getElementById('playButton2').addEventListener('click', function () {
+        const video = document.getElementById('myVideo2');
+        video.muted = false;
+        video.play();
+    });
+
+    document.getElementById('pauseButton2').addEventListener('click', function () {
+        const video = document.getElementById('myVideo2');
+        video.pause();
+    });
+    document.getElementById('restartButton2').addEventListener('click', function () {
+        const video = document.getElementById('myVideo2');
+        video.currentTime = 0; // Set the current playback time to the beginning
+        video.play(); // Play the video
+    });
+</script>
+</body>
+</html>
