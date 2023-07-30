@@ -24,7 +24,8 @@
 <nav class="navbar bg-primary" data-bs-theme="dark">
     <div class="container-fluid">
         <a class="navbar-brand fw-bold fs-2" href="#">AI</a>
-        <a target="_blank" class="navbar-brand fs-6 underline" href="https://github.com/kshahi/ok/blob/main/ai.html">Source Code</a>
+        <a target="_blank" class="navbar-brand fs-6 underline" href="https://github.com/kshahi/ok/blob/main/ai.html">Source
+            Code</a>
     </div>
 </nav>
 <div class="container-fluid my-3">
@@ -201,9 +202,14 @@
                             file under bin folder. We can set this location in environment variable to be able to
                             execute ffmpeg
                             command globally.
+                            <div class="fw-bold">
+                                Note: if you don't want to do in local machine, we can use <a target="_blank"
+                                                                                              href="https://colab.research.google.com/?utm_source=scs-index">Google
+                                Colab</a>
+                            </div>
                         </li>
                         <li class="list-group-item">
-                            Run Command: <code> ffmpeg -i input_video.mp4 -vf "chromakey=green:similarity=0.1:blend=0.0"
+                            Run Command: <code> ffmpeg -i input_video.mp4 -vf "chromakey=green:similarity=0.087:blend=0.0"
                             -c:v libvpx-vp9 -pix_fmt yuva420p output_video.webm</code>
                         </li>
                         <li class="list-group-item">
@@ -311,6 +317,11 @@
                         <li class="list-group-item">
                             We have to use green background image to generate green background video, which we can later
                             use to generate transparent video using <a target="_blank" href="https://www.ffmpeg.org/">FFmpeg</a>
+                            <div class="fw-bold">
+                                Note: if you don't want to do in local machine, we can use <a target="_blank"
+                                                                                              href="https://colab.research.google.com/?utm_source=scs-index">Google
+                                Colab</a>
+                            </div>
                         </li>
                         <li class="list-group-item">
                             We can convert image with green background image using <a target="_blank"
@@ -417,7 +428,7 @@
                     </div>
                     <div class="card" style="width:640px">
                         <div class="mt-2 fw-semibold">Use Google Colab and Wav2lib</div>
-                        <div>Image to Transparebnt Video</div>
+                        <div>Image to Transparent Video</div>
                         <div class="card-body">
                             <div style="font-family: sans-serif;">
                                 <div class="relative d-flex align-items-center justify-content-center"
@@ -425,7 +436,7 @@
                                     <div style="position:absolute">
                                         <video id="myVideo7" class="object-fit-contain" width="264px" height="100%"
                                                loop>
-                                            <source src="https://earth9hero.s3.us-east-2.amazonaws.com/development/ai/transparent_result_voice.webm"
+                                            <source src="https://earth9hero.s3.us-east-2.amazonaws.com/development/ai/chaplin_transparent.webm"
                                                     type="video/webm">
                                         </video>
                                     </div>
@@ -516,9 +527,9 @@
                             Output: <code>Wav2Lip/results/transparent_result_voice.mp4</code>.
                             Make sure to adjust chromakey as per image's background color. I am using <a
                                 href="https://www.photoroom.com/tools/background-remover/green-background">photoroom</a>,
-                            which requires <code>seagreen</code>.
+                            which requires <code>#3D995C</code>.
                         </li>
-                        <li class="list-group-item"> We can improve the transparent video by adjust configuration.</li>
+                        <li class="list-group-item"> We can improve the transparent video by adjusting configuration.</li>
                     </ol>
                 </div>
             </div>
@@ -546,6 +557,9 @@
                                                                     href="https://www.adobe.com/products/character-animator.html">Adobe
                     Character Animator</a>, we
                     can use it to create videos, which requires a manual process
+                </li>
+                <li>
+                    We can find most used color (background color using script). Available in
                 </li>
             </ol>
         </div>
