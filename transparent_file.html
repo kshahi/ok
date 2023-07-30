@@ -5,7 +5,8 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Taking Man</title>
+    <title>AI Tools</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
@@ -22,21 +23,41 @@
 <body>
 <nav class="navbar bg-primary" data-bs-theme="dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">AI</a>
+        <a class="navbar-brand fw-bold fs-2" href="#">AI</a>
+        <a target="_blank" class="navbar-brand fs-6 underline" href="https://github.com/kshahi/ok/blob/main/ai.html">Source Code</a>
     </div>
 </nav>
-<div class="container-fluid my-5">
+<div class="container-fluid my-3">
     <nav>
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-            <button class="nav-link active fw-bold" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
+            <button class="nav-link active fw-bold" id="nav-home-tab" data-bs-toggle="tab"
+                    data-bs-target="#nav-home"
+                    onclick="pauseVideos()"
                     type="button" role="tab" aria-controls="nav-home" aria-selected="true">Anime Character
             </button>
-            <button class="nav-link fw-bold" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
+            <button class="nav-link fw-bold" id="nav-profile-tab" data-bs-toggle="tab"
+                    data-bs-target="#nav-profile"
+                    onclick="pauseVideos()"
                     type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Transparent Anime
                 Character
             </button>
-            <button class="nav-link fw-bold" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact"
-                    type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Real Character
+            <button class="nav-link fw-bold" id="nav-contact-tab" data-bs-toggle="tab"
+                    data-bs-target="#nav-contact"
+                    onclick="pauseVideos()"
+                    type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Real Character(Local)
+                Image/Video)
+            </button>
+            <button class="nav-link fw-bold" id="nav-1-tab" data-bs-toggle="tab"
+                    data-bs-target="#nav-1"
+                    onclick="pauseVideos()"
+                    type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Real Character(Google
+                Colab) Video
+            </button>
+            <button class="nav-link fw-bold" id="nav-2-tab" data-bs-toggle="tab"
+                    data-bs-target="#nav-2"
+                    onclick="pauseVideos()"
+                    type="button" role="tab" aria-controls="nav-2" aria-selected="false">Real Character(Google
+                Colab) Image
             </button>
         </div>
     </nav>
@@ -70,8 +91,9 @@
                     <div class="my-2 fw-semibold">Steps (Size: 18.6MB)</div>
                     <ol class="list-group list-group-numbered">
                         <li class="list-group-item">
-                            Open new or existing Project in <a
-                                href="https://www.adobe.com/products/character-animator.html">Adobe Character
+                            Open new or existing Project in <a target="_blank"
+                                                               href="https://www.adobe.com/products/character-animator.html">Adobe
+                            Character
                             Animator</a>
                         </li>
                         <li class="list-group-item">
@@ -84,7 +106,8 @@
                             Import Background Image and Drag into scene.
                         </li>
                         <li class="list-group-item">
-                            Under Record Section, Click on <code>timeline > compute lip sync from audio </code>. it will make lip sync
+                            Under Record Section, Click on <code>timeline > compute lip sync from audio </code>. it will
+                            make lip sync
                             on puppet based on audio.
                         </li>
                         <li class="list-group-item">
@@ -101,7 +124,9 @@
             <div class="row mt-4 row-cols-auto">
                 <div class="col text-center">
                     <div class="card" style="width:640px">
-                        <div class="mt-2 fw-semibold">Transparent Anime character. We can set any background image or any</div>
+                        <div class="mt-2 fw-semibold">Transparent Anime character. We can set any background image or
+                            any
+                        </div>
                         <div class="card-body">
                             <div style="font-family: sans-serif;">
                                 <div class="relative" style="font-family: sans-serif; width: 100%; height: 350px">
@@ -142,11 +167,13 @@
                     <div class="my-2 fw-semibold">Steps (Size: 2.6MB)</div>
                     <ol class="list-group list-group-numbered">
                         <li class="list-group-item">
-                            This transparent character video is created from previous video. We can see significant reduction in size(From 18.6MB to 2.6MB).
+                            This transparent character video is created from previous video. We can see significant
+                            reduction in size(From 18.6MB to 2.6MB).
                         </li>
                         <li class="list-group-item">
-                            Open new or existing Project in <a
-                                href="https://www.adobe.com/products/character-animator.html">Adobe Character
+                            Open new or existing Project in <a target="_blank"
+                                                               href="https://www.adobe.com/products/character-animator.html">Adobe
+                            Character
                             Animator</a>
                         </li>
                         <li class="list-group-item">
@@ -169,7 +196,8 @@
                             Export to desire location. Output will be in MP4 format.
                         </li>
                         <li class="list-group-item">
-                            Download <a href="https://www.ffmpeg.org/">FFmpeg</a> and unzip it. There will be ffmpeg.exe
+                            Download <a target="_blank" href="https://www.ffmpeg.org/">FFmpeg</a> and unzip it. There
+                            will be ffmpeg.exe
                             file under bin folder. We can set this location in environment variable to be able to
                             execute ffmpeg
                             command globally.
@@ -179,17 +207,347 @@
                             -c:v libvpx-vp9 -pix_fmt yuva420p output_video.webm</code>
                         </li>
                         <li class="list-group-item">
-                            Make sure to replace correct input and output file locations. Output video extension will be in
+                            By Adjusting blend and similarities values, we can fine-tune the chroma key effect based on
+                            the specific characteristics of our video
+                        </li>
+                        <li class="list-group-item">
+                            Make sure to replace correct input and output file locations. Output video extension will be
+                            in
                             <code>webm</code>
                         </li>
                     </ol>
                 </div>
             </div>
         </div>
-        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">...
+        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
+            <div class="row mt-4 row-cols-auto">
+                <div class="col text-center">
+                    <div class="card mb-1" style="width:640px">
+                        <div class="mt-2 fw-semibold">Real Character with lip sync with audio (Size: 773KB)</div>
+                        <div class="card-body">
+                            <div style="font-family: sans-serif;">
+                                <div style="font-family: sans-serif; width: 100%; height: 300px">
+                                    <video id="myVideo3" class="object-fit-contain" width="100%" height="100%" loop>
+                                        <source src="https://earth9hero.s3.us-east-2.amazonaws.com/development/ai/real_character1.mp4"
+                                                type="video/webm">
+                                    </video>
+                                </div>
+                                <div class="mt-2">
+                                    <button type="button" id="playButton3" class="btn btn-primary">Play Video</button>
+                                    <button type="button" id="pauseButton3" class="btn btn-secondary">Pause Video
+                                    </button>
+                                    <button type="button" id="restartButton3" class="btn btn-outline-success">Restart
+                                        Video
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" style="width:640px">
+                        <div class="mt-2 fw-semibold">Transparent Real Character with lip sync with audio (Size:
+                            776KB)
+                        </div>
+                        <div class="card-body">
+                            <div style="font-family: sans-serif;">
+                                <div class="relative" style="font-family: sans-serif; width: 100%; height: 300px">
+                                    <div style="position:absolute; height:300px">
+                                        <video id="myVideo4" class="object-fit-contain" width="100%" height="100%" loop>
+                                            <source src="https://earth9hero.s3.us-east-2.amazonaws.com/development/ai/real_character2.webm"
+                                                    type="video/webm">
+                                        </video>
+                                    </div>
+                                    <p>
+                                        This is transparent background. This is transparent background. This is
+                                        transparent background. This is transparent background.This is transparent
+                                        background. This is transparent background. This is transparent background.This
+                                        is transparent background. This is transparent background. This is transparent
+                                        background.
+                                    </p>
+                                </div>
+                                <div class="mt-2">
+                                    <button type="button" id="playButton4" class="btn btn-primary">Play Video</button>
+                                    <button type="button" id="pauseButton4" class="btn btn-secondary">Pause Video
+                                    </button>
+                                    <button type="button" id="restartButton4" class="btn btn-outline-success">Restart
+                                        Video
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-md-7">
+                    <div class="my-2 fw-bold">Local Stet Up Process</div>
+                    <div class="my-2 fw-semibold">Steps (took 1-2 minutes)</div>
+                    <ol class="list-group list-group-numbered">
+                        <li class="list-group-item">
+                            Images with lip sync
+                        </li>
+                        <li class="list-group-item" style="color:red">
+                            It works only on windows machine.
+                        </li>
+                        <li class="list-group-item">
+                            Download <a target="_blank" href="https://github.com/dunnousername/Wav2Lip/releases">Wav2Lib
+                            (dunnousername)</a> and unzip it.
+                            <a target="_blank" href="https://www.youtube.com/watch?v=UliR8I4CQuY">Refer</a>
+                        </li>
+                        <li class="list-group-item">
+                            Find start.exe file and double click it. It will open GUI where we can set image,audio and
+                            output video location.
+                        </li>
+                        <li class="list-group-item">
+                            If you get any error, just uncheck <code>Use GPU</code> option. and then click go.
+                        </li>
+                        <li class="list-group-item">
+                            If you find blur around mouth, we can use <a target="_blank"
+                                                                         href="https://github.com/OpenTalker/video-retalking">videoretalking </a>
+                            to improve
+                            quality of video.
+                        </li>
+                        <li class="list-group-item">
+                            We can also use <code>videoretalking</code> to perform audio based lip synchronization for
+                            video.
+                        </li>
+                        <li class="list-group-item">
+                            We have to use green background image to generate green background video, which we can later
+                            use to generate transparent video using <a target="_blank" href="https://www.ffmpeg.org/">FFmpeg</a>
+                        </li>
+                        <li class="list-group-item">
+                            We can convert image with green background image using <a target="_blank"
+                                                                                      href="https://www.photoroom.com/tools/background-remover/green-background">photoroom</a>
+                            or we can automate this process.
+                        </li>
+                        <li class="list-group-item">
+                            Note: <a target="_blank" href="https://github.com/dunnousername/Wav2Lip/releases">Wav2Lib
+                            (dunnousername)</a> is based on <a target="_blank"
+                                                               href="https://github.com/Rudrabha/Wav2Lip">Wav2Lip</a>,
+                            we can set up <code>Wav2Lib</code> directly in our local machine.
+                        </li>
+                        <li class="list-group-item">
+                            <code>Wav2Lib(dunnousername)</code> provides GUI but only works in windows, To make it work
+                            on all OS , we have to use <code>Wav2Lip</code> directly.
+                        </li>
+                    </ol>
+                </div>
+            </div>
         </div>
-        <div class="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab" tabindex="0">
-            ...
+        <div class="tab-pane fade" id="nav-1" role="tabpanel" aria-labelledby="nav-1-tab" tabindex="0">
+            <div class="row mt-4 row-cols-auto">
+                <div class="col text-center">
+                    <div class="card mb-2" style="width:640px">
+                        <div class="mt-2 fw-semibold">Use Google Colab and Wav2lib</div>
+                        <div>Video to Video [Original Video <a target="_blank"
+                                                               href="https://www.youtube.com/watch?v=lDu6SQjiZ-I">link</a>)
+                        </div>
+                        <div class="card-body">
+                            <div style="font-family: sans-serif;">
+                                <video id="myVideo5" class="object-fit-contain" width="100%" height="100%" loop>
+                                    <source src="https://earth9hero.s3.us-east-2.amazonaws.com/development/ai/real_character5.mp4"
+                                            type="video/mp4">
+                                </video>
+                                <div class="mt-2">
+                                    <button type="button" id="playButton5" class="btn btn-primary">Play Video</button>
+                                    <button type="button" id="pauseButton5" class="btn btn-secondary">Pause Video
+                                    </button>
+                                    <button type="button" id="restartButton5" class="btn btn-outline-success">Restart
+                                        Video
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-md-7">
+                    <div class="my-2 fw-semibold">Description</div>
+                    <ol class="list-group list-group-numbered">
+                        <li class="list-group-item">
+                            <a target="_blank" href="https://github.com/Rudrabha/Wav2Lip">Wav2lib: </a> It provides
+                            accurate lip syncing
+                            vidoes based on provided audio. It is based on python.
+                        </li>
+                        <li class="list-group-item">
+                            <a target="_blank" href="https://colab.research.google.com/?utm_source=scs-index">Google
+                                Colab: </a> Colab,
+                            or "Colaboratory", allows us to write and execute Python in our browser (cloud based
+                            service). It is a hosted Jupyter notebook that requires no setup and has an excellent free
+                            version, which gives free access to Google computing resources such as GPUs and TPUs. All
+                            you need to have in order to use it is internet and a Gmail account, since codes are saved
+                            in Google Drive. It makes life way easier than using and IDE. We can
+                            run 1-2 sessions at a time or concurrently. We can go with Colab-Pro for more session.
+                        </li>
+                        <li class="list-group-item">
+                            Video to Video detail steps
+                            <div class="ml-4" style="margin-left: 10px">
+                                <div>
+                                    Ref <a target="_blank" href="https://www.youtube.com/watch?v=11FH59Cv-9s">this</a>
+                                </div>
+                                <div>
+                                    Follow <a target="_blank"
+                                              href="https://colab.research.google.com/github/justinjohn0306/Wav2Lip/blob/master/Wav2Lip_simplified_v5.ipynb#scrollTo=Qgo-oaI3JU2u">this</a>
+
+                                </div>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="nav-2" role="tabpanel" aria-labelledby="nav-2-tab" tabindex="0">
+            <div class="row mt-4 row-cols-auto">
+                <div class="col text-center">
+                    <div class="card mb-2" style="width:640px; height: 500px">
+                        <div class="mt-2 fw-semibold">Use Google Colab and Wav2lib</div>
+                        <div>Image to Video</div>
+                        <div class="card-body">
+                            <div style="font-family: sans-serif;">
+                                <video id="myVideo6" class="object-fit-contain" width="264px" height="100%" loop>
+                                    <source src="https://earth9hero.s3.us-east-2.amazonaws.com/development/ai/chaplin1.mp4"
+                                            type="video/mp4">
+                                </video>
+                                <div class="mt-2">
+                                    <button type="button" id="playButton6" class="btn btn-primary">Play Video</button>
+                                    <button type="button" id="pauseButton6" class="btn btn-secondary">Pause Video
+                                    </button>
+                                    <button type="button" id="restartButton6" class="btn btn-outline-success">Restart
+                                        Video
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" style="width:640px">
+                        <div class="mt-2 fw-semibold">Use Google Colab and Wav2lib</div>
+                        <div>Image to Transparebnt Video</div>
+                        <div class="card-body">
+                            <div style="font-family: sans-serif;">
+                                <div class="relative d-flex align-items-center justify-content-center"
+                                     style="font-family: sans-serif; width: 100%; height: 350px">
+                                    <div style="position:absolute">
+                                        <video id="myVideo7" class="object-fit-contain" width="264px" height="100%"
+                                               loop>
+                                            <source src="https://earth9hero.s3.us-east-2.amazonaws.com/development/ai/transparent_result_voice.webm"
+                                                    type="video/webm">
+                                        </video>
+                                    </div>
+                                    <p>
+                                        This is background. This is background. This is background. This is background.
+                                        This is background. This is background. This is background. This is background.
+                                        This is background. This is background. This is background. This is background.
+                                        This is background. This is background. This is background. This is background.
+                                        This is background. This is background. This is background. This is background.
+                                        This is background. This is background. This is background. This is background.
+                                        This is background. This is background. This is background. This is background.
+                                        This is background. This is background. This is background. This is background.
+                                        This is background. This is background. This is background. This is background.
+                                        This is background. This is background. This is background. This is background.
+                                        This is background. This is background. This is background. This is background.
+                                        This is background. This is background. This is background.
+                                    </p>
+                                </div>
+                                <div class="mt-2">
+                                    <button type="button" id="playButton7" class="btn btn-primary">Play Video</button>
+                                    <button type="button" id="pauseButton7" class="btn btn-secondary">Pause Video
+                                    </button>
+                                    <button type="button" id="restartButton7" class="btn btn-outline-success">Restart
+                                        Video
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-md-7">
+                    <div class="my-2 fw-semibold">Description</div>
+                    <ol class="list-group list-group-numbered">
+                        <li class="list-group-item">
+                            <a target="_blank" href="https://github.com/Rudrabha/Wav2Lip">Wav2lib: </a> It provides
+                            accurate lip syncing
+                            vidoes based on provided audio. It is based on python.
+                        </li>
+                        <li class="list-group-item">
+                            <a target="_blank" href="https://colab.research.google.com/?utm_source=scs-index">Google
+                                Colab: </a> Colab,
+                            or "Colaboratory", allows us to write and execute Python in our browser (cloud based
+                            service). It is a hosted Jupyter notebook that requires no setup and has an excellent free
+                            version, which gives free access to Google computing resources such as GPUs and TPUs. All
+                            you need to have in order to use it is internet and a Gmail account, since codes are saved
+                            in Google Drive. It makes life way easier than using and IDE. We can
+                            run 1-2 sessions at a time or concurrently. We can go with Colab-Pro for more session.
+                        </li>
+                    </ol>
+
+                    <div class="my-2 fw-semibold">Steps</div>
+                    <ol class="list-group list-group-numbered">
+                        <li class="list-group-item">
+                            Go to <a
+                                href="https://colab.research.google.com/drive/1xyJAKk8MdZmOeLxpGome8MocxCHH-ETH#scrollTo=KerAjQ5nytYN">link</a>
+                            and copy it to your drive.
+                            I have modified jupyter notebook to support image/video as an input. (Needs Improvement)
+                        </li>
+                        <li class="list-group-item">
+                            Run <code>Step1: Setup Wav2Lip</code>
+                        </li>
+                        <li class="list-group-item">
+                            Under <code>LipSync on Your Video File</code>,
+                            <ol class="list-group list-group-numbered">
+                                <li class="list-group-item">
+                                    If you want to create video from image. run <code>STEP 1: Get Video From
+                                    Image</code>
+                                    and <code>STEP 2: Convert Avi Video to Mp4</code>.
+                                </li>
+                                <li class="list-group-item">
+                                    Set correct image path in <code>STEP 1: Get Video From Image</code>
+                                </li>
+                                <li class="list-group-item">
+                                    If you want to create video from video. select <code>STEP 3: Select Video</code>
+                                    and execute
+                                </li>
+                            </ol>
+                        </li>
+                        <li class="list-group-item">
+                            Select <code>STEP 4: Select Audio</code> and execute.
+                        </li>
+                        <li class="list-group-item">
+                            Generate video by executing <code>STEP 5: Start Crunching and Preview Output</code>. Output:
+                            <code>Wav2Lip/results/result_voice.mp4</code>
+                        </li>
+                        <li class="list-group-item">
+                            For Transparent Background Image, Execute <code>STEP 6: Convert to Transparent Video</code>
+                            Output: <code>Wav2Lip/results/transparent_result_voice.mp4</code>.
+                            Make sure to adjust chromakey as per image's background color. I am using <a
+                                href="https://www.photoroom.com/tools/background-remover/green-background">photoroom</a>,
+                            which requires <code>seagreen</code>.
+                        </li>
+                        <li class="list-group-item"> We can improve the transparent video by adjust configuration.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="my-3">
+        <div class="fw-bold">Notes:</div>
+        <div class="ml-2">
+            <ol>
+                <li>
+                    We already have api to generate audio based on given text in AI Admin where we can customize gender,
+                    speed, accent etc...
+                </li>
+                <li>
+                    Adobe Character Animator doesn't provides api or script to automate video creation process.
+                </li>
+                <li>
+                    For <a target="_blank" href="https://www.blender.org/">Blender</a>, We need to create a Blender
+                    character/puppet,
+                    which will require a deep dive into Blender. Blender doesn't accept characters from Adobe Character
+                    Animator
+                </li>
+                <li>
+                    Since we have already purchased puppets from <a target="_blank"
+                                                                    href="https://www.adobe.com/products/character-animator.html">Adobe
+                    Character Animator</a>, we
+                    can use it to create videos, which requires a manual process
+                </li>
+            </ol>
         </div>
     </div>
 </div>
@@ -197,37 +555,128 @@
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
 <script>
-    document.getElementById('playButton1').addEventListener('click', function () {
-        const video = document.getElementById('myVideo1');
-        video.muted = false;
-        video.play();
-    });
+    const video1 = $('#myVideo1').get(0);
+    $('#playButton1').click(() => {
+        pauseVideos();
+        video1.muted = false;
+        video1.play();
+    })
+    $('#pauseButton1').click(() => {
+        video1.muted = false;
+        video1.pause();
+    })
+    $('#restartButton1').click(() => {
+        pauseVideos();
+        video1.currentTime = 0; // Set the current playback time to the beginning
+        video1.play(); // Play the video
+    })
 
-    document.getElementById('pauseButton1').addEventListener('click', function () {
-        const video = document.getElementById('myVideo1');
-        video.pause();
-    });
-    document.getElementById('restartButton1').addEventListener('click', function () {
-        const video = document.getElementById('myVideo1');
-        video.currentTime = 0; // Set the current playback time to the beginning
-        video.play(); // Play the video
-    });
 
-    document.getElementById('playButton2').addEventListener('click', function () {
-        const video = document.getElementById('myVideo2');
-        video.muted = false;
-        video.play();
-    });
+    const video2 = $('#myVideo2').get(0);
+    $('#playButton2').click(() => {
+        pauseVideos();
+        video2.muted = false;
+        video2.play();
+    })
+    $('#pauseButton2').click(() => {
+        video2.muted = false;
+        video2.pause();
+    })
+    $('#restartButton2').click(() => {
+        pauseVideos();
+        video2.currentTime = 0; // Set the current playback time to the beginning
+        video2.play(); // Play the video
+    })
 
-    document.getElementById('pauseButton2').addEventListener('click', function () {
-        const video = document.getElementById('myVideo2');
-        video.pause();
-    });
-    document.getElementById('restartButton2').addEventListener('click', function () {
-        const video = document.getElementById('myVideo2');
-        video.currentTime = 0; // Set the current playback time to the beginning
-        video.play(); // Play the video
-    });
+    const video3 = $('#myVideo3').get(0);
+    $('#playButton3').click(() => {
+        pauseVideos();
+        video3.muted = false;
+        video3.play();
+    })
+    $('#pauseButton3').click(() => {
+        video3.muted = false;
+        video3.pause();
+    })
+    $('#restartButton3').click(() => {
+        pauseVideos();
+        video3.currentTime = 0; // Set the current playback time to the beginning
+        video3.play(); // Play the video
+    })
+
+    const video4 = $('#myVideo4').get(0);
+    $('#playButton4').click(() => {
+        pauseVideos();
+        video4.muted = false;
+        video4.play();
+    })
+    $('#pauseButton4').click(() => {
+        video4.muted = false;
+        video4.pause();
+    })
+    $('#restartButton4').click(() => {
+        pauseVideos();
+        video4.currentTime = 0; // Set the current playback time to the beginning
+        video4.play(); // Play the video
+    })
+    const video5 = $('#myVideo5').get(0);
+    $('#playButton5').click(() => {
+        pauseVideos();
+        video5.muted = false;
+        video5.play();
+    })
+    $('#pauseButton5').click(() => {
+        video5.muted = false;
+        video5.pause();
+    })
+    $('#restartButton5').click(() => {
+        pauseVideos();
+        video5.currentTime = 0; // Set the current playback time to the beginning
+        video5.play(); // Play the video
+    })
+
+
+    const video6 = $('#myVideo6').get(0);
+    $('#playButton6').click(() => {
+        pauseVideos();
+        video6.muted = false;
+        video6.play();
+    })
+    $('#pauseButton6').click(() => {
+        video6.muted = false;
+        video6.pause();
+    })
+    $('#restartButton6').click(() => {
+        pauseVideos();
+        video6.currentTime = 0; // Set the current playback time to the beginning
+        video6.play(); // Play the video
+    })
+
+    const video7 = $('#myVideo7').get(0);
+    $('#playButton7').click(() => {
+        pauseVideos();
+        video7.muted = false;
+        video7.play();
+    })
+    $('#pauseButton7').click(() => {
+        video7.muted = false;
+        video7.pause();
+    })
+    $('#restartButton7').click(() => {
+        pauseVideos();
+        video7.currentTime = 0; // Set the current playback time to the beginning
+        video7.play(); // Play the video
+    })
+
+    function pauseVideos() {
+        video1.pause();
+        video2.pause();
+        video3.pause();
+        video4.pause();
+        video5.pause();
+        video6.pause();
+        video7.pause();
+    }
 </script>
 </body>
 </html>
