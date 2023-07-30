@@ -9,7 +9,10 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Pacifico&display=swap" rel="stylesheet">
     <style>
         .nav-tabs .nav-link {
             color: gray;
@@ -18,17 +21,29 @@
         .nav-tabs .nav-link.active {
             color: #0080FF;
         }
+
+        .title{
+            font-family: 'Dancing Script', cursive;
+        }
+        .source{
+            font-family: 'Dancing Script', cursive;
+            font-family: 'Pacifico', cursive;
+        }
     </style>
 </head>
 <body>
 <nav class="navbar bg-primary" data-bs-theme="dark">
-    <div class="container-fluid">
-        <a class="navbar-brand fw-bold fs-2" href="#">AI</a>
-        <a target="_blank" class="navbar-brand fs-6 underline" href="https://github.com/kshahi/ok/blob/main/ai.html">Source
+    <div class="container-fluid px-4">
+        <div class="d-flex align-items-center justify-content-center">
+            <img src="https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                 style="height: 70px; border-radius: 18px; width: 100px" class="img-fluid" alt="Responsive image">
+            <div class="mx-3 title navbar-brand fw-bold fs-3">AI Tools</div>
+        </div>
+        <a target="_blank" class="source navbar-brand fs-6 underline" href="https://github.com/kshahi/ok/blob/main/ai.html">Source
             Code</a>
     </div>
 </nav>
-<div class="container-fluid my-3">
+<div class="container-fluid mt-4 px-4">
     <nav>
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
             <button class="nav-link active fw-bold" id="nav-home-tab" data-bs-toggle="tab"
@@ -59,6 +74,11 @@
                     onclick="pauseVideos()"
                     type="button" role="tab" aria-controls="nav-2" aria-selected="false">Real Character(Google
                 Colab) Image
+            </button>
+            <button class="nav-link fw-bold" id="nav-3-tab" data-bs-toggle="tab"
+                    data-bs-target="#nav-3"
+                    onclick="pauseVideos()"
+                    type="button" role="tab" aria-controls="nav-3" aria-selected="false">Other AI Tools
             </button>
         </div>
     </nav>
@@ -209,7 +229,8 @@
                             </div>
                         </li>
                         <li class="list-group-item">
-                            Run Command: <code> ffmpeg -i input_video.mp4 -vf "chromakey=green:similarity=0.087:blend=0.0"
+                            Run Command: <code> ffmpeg -i input_video.mp4 -vf
+                            "chromakey=green:similarity=0.087:blend=0.0"
                             -c:v libvpx-vp9 -pix_fmt yuva420p output_video.webm</code>
                         </li>
                         <li class="list-group-item">
@@ -529,7 +550,48 @@
                                 href="https://www.photoroom.com/tools/background-remover/green-background">photoroom</a>,
                             which requires <code>#3D995C</code>.
                         </li>
-                        <li class="list-group-item"> We can improve the transparent video by adjusting configuration.</li>
+                        <li class="list-group-item"> We can improve the transparent video by adjusting configuration.
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="nav-3" role="tabpanel" aria-labelledby="nav-3-tab" tabindex="0">
+            <div class="row mt-4 row-cols-auto">
+                <div class="col col-md-7">
+                    <div class="my-2 fw-bold">Other AI Tools</div>
+                    <ol class="list-group list-group-numbered">
+                        <li class="list-group-item">
+                            <a target="_blank" href="https://avatarify.ai/">Avatarify</a> is an open-source project that
+                            allows real-time facial reenactment. It can be adapted for lip-syncing purposes to animate a
+                            face in real-time according to the audio input.
+                            <a target="_blank" href="https://github.com/alievk/avatarify-python"> Repository</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a target="_blank" href="https://avatarify.ai/">FOMM (First Order Motion Model):</a> is a
+                            versatile face reenactment model that can be used for lip-syncing tasks, among other
+                            applications. It was introduced in the paper "First Order Motion Model for Image Animation."
+                            <a target="_blank" href="https://github.com/AliaksandrSiarohin/first-order-model">
+                                Repository</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a target="_blank" href="https://github.com/Rudrabha/LipGAN">LipGAN:</a>Generate realistic
+                            talking faces for any human speech and face identity.
+                        </li>
+                        <li class="list-group-item">
+                            <a target="_blank" href="https://github.com/iperov/DeepFaceLab">DeepFaceLab:</a>
+                            can also be used to achieve lip sync by swapping faces with generated lip movements to match
+                            the audio.
+                        </li>
+
+                        <li class="list-group-item">
+                            <a target="_blank" href="https://www.reallusion.com/cartoon-animator/">Cartoon Animator:</a>
+                            is a software that allows users to create 2D animations, and it includes a lip sync feature
+                            that can generate mouth movements based on audio input.
+                        </li>
+                        <li class="list-group-item">
+                            ...
+                        </li>
                     </ol>
                 </div>
             </div>
@@ -559,7 +621,9 @@
                     can use it to create videos, which requires a manual process
                 </li>
                 <li>
-                    We can find most used color (background color using script). Available in
+                    We can find most used color (background color) in image/video using script. We can prepare jupyter
+                    notebook in
+                    Google Colab
                 </li>
             </ol>
         </div>
