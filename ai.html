@@ -22,10 +22,11 @@
             color: #0080FF;
         }
 
-        .title{
+        .title {
             font-family: 'Dancing Script', cursive;
         }
-        .source{
+
+        .source {
             font-family: 'Dancing Script', cursive;
             font-family: 'Pacifico', cursive;
         }
@@ -39,7 +40,8 @@
                  style="height: 70px; border-radius: 18px; width: 100px" class="img-fluid" alt="Responsive image">
             <div class="mx-3 title navbar-brand fw-bold fs-3">AI Tools</div>
         </div>
-        <a target="_blank" class="source navbar-brand fs-6 underline" href="https://github.com/kshahi/ok/blob/main/ai.html">Source
+        <a target="_blank" class="source navbar-brand fs-6 underline"
+           href="https://github.com/kshahi/ok/blob/main/ai.html">Source
             Code</a>
     </div>
 </nav>
@@ -74,6 +76,11 @@
                     onclick="pauseVideos()"
                     type="button" role="tab" aria-controls="nav-2" aria-selected="false">Real Character(Google
                 Colab) Image
+            </button>
+            <button class="nav-link fw-bold" id="nav-2.1-tab" data-bs-toggle="tab"
+                    data-bs-target="#nav-2.1"
+                    onclick="pauseVideos()"
+                    type="button" role="tab" aria-controls="nav-2.1" aria-selected="false">Real Character (Sad Talker)
             </button>
             <button class="nav-link fw-bold" id="nav-3-tab" data-bs-toggle="tab"
                     data-bs-target="#nav-3"
@@ -556,11 +563,117 @@
                 </div>
             </div>
         </div>
+        <div class="tab-pane fade" id="nav-2.1" role="tabpanel" aria-labelledby="nav-2-tab" tabindex="0">
+            <div class="row mt-4 row-cols-auto">
+                <div class="col text-center">
+                    <div class="card mb-2" style="width:640px; height: 500px">
+                        <div class="mt-2 fw-semibold">Use SadTalker</div>
+                        <div>Image to Video</div>
+                        <div class="card-body">
+                            <div style="font-family: sans-serif;">
+                                <video id="myVideo61" class="object-fit-contain" width="100%" height="100%" loop>
+                                    <source src="https://earth9hero.s3.us-east-2.amazonaws.com/development/ai/video_v2.mp4"
+                                            type="video/mp4">
+                                </video>
+                                <div class="mt-2">
+                                    <button type="button" id="playButton61" class="btn btn-primary">Play Video</button>
+                                    <button type="button" id="pauseButton61" class="btn btn-secondary">Pause Video
+                                    </button>
+                                    <button type="button" id="restartButton61" class="btn btn-outline-success">Restart
+                                        Video
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-2" style="width:640px; height: 500px">
+                        <div class="mt-2 fw-semibold">Use SadTalker</div>
+                        <div>Image to Video</div>
+                        <div class="card-body">
+                            <div style="font-family: sans-serif;">
+                                <div class="relative" style="font-family: sans-serif; width: 100%; height: 350px">
+                                    <div style="position:absolute">
+                                        <video id="myVideo62" class="object-fit-contain"
+                                               style="font-family: sans-serif; width: 100%; height: 350px"
+                                               loop>
+                                            <source src="https://earth9hero.s3.us-east-2.amazonaws.com/development/ai/output_video_v2.webm"
+                                                    type="video/webm">
+                                        </video>
+                                    </div>
+                                    <p>
+                                        This is background. This is background. This is background. This is background.
+                                        This is background. This is background. This is background. This is background.
+                                        This is background. This is background. This is background. This is background.
+                                        This is background. This is background. This is background. This is background.
+                                        This is background. This is background. This is background. This is background.
+                                        This is background. This is background. This is background. This is background.
+                                        This is background. This is background. This is background. This is background.
+                                        This is background. This is background. This is background. This is background.
+                                        This is background. This is background. This is background. This is background.
+                                        This is background. This is background. This is background. This is background.
+                                        This is background. This is background. This is background. This is background.
+                                        This is background. This is background. This is background.
+                                    </p>
+                                </div>
+                                <div class="mt-2">
+                                    <button type="button" id="playButton62" class="btn btn-primary">Play Video</button>
+                                    <button type="button" id="pauseButton62" class="btn btn-secondary">Pause Video
+                                    </button>
+                                    <button type="button" id="restartButton62" class="btn btn-outline-success">Restart
+                                        Video
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-md-7">
+                    <div class="my-2 fw-semibold">Description</div>
+                    <ol class="list-group list-group-numbered">
+                        <li class="list-group-item">
+                            <a target="_blank" href="https://github.com/OpenTalker/SadTalker">SadTalker: </a> It
+                            provides lip sync, eye blinking and face movement based on audio clip. We can install
+                            locally in windows/linux/mac machine.
+                        </li>
+                        <li class="list-group-item">
+                            <a target="_blank" href="https://colab.research.google.com/?utm_source=scs-index">Google
+                                Colab: </a> Colab,
+                            or "Colaboratory", allows us to write and execute Python in our browser (cloud based
+                            service). It is a hosted Jupyter notebook that requires no setup and has an excellent free
+                            version, which gives free access to Google computing resources such as GPUs and TPUs. All
+                            you need to have in order to use it is internet and a Gmail account, since codes are saved
+                            in Google Drive. It makes life way easier than using and IDE. We can
+                            run 1-2 sessions at a time or concurrently. We can go with Colab-Pro for more session.
+                        </li>
+                        <li class="list-group-item">
+                            Reference
+                            <div style="margin-left: 20px">
+                                <a target="_blank" href="https://github.com/OpenTalker/SadTalker">Repository / </a>
+                                <a target="_blank"
+                                   href="https://colab.research.google.com/drive/14E-lNLK0tYucYcSmcFWGi0POj-e1cFTP">Jupyter
+                                    NoteBook / </a>
+                                <a target="_blank" href="https://huggingface.co/spaces/vinthony/SadTalker">Hugging
+                                    Face</a>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
         <div class="tab-pane fade" id="nav-3" role="tabpanel" aria-labelledby="nav-3-tab" tabindex="0">
             <div class="row mt-4 row-cols-auto">
                 <div class="col col-md-7">
                     <div class="my-2 fw-bold">Other AI Tools</div>
                     <ol class="list-group list-group-numbered">
+                        <li class="list-group-item">
+                            <a target="_blank" href="https://www.d-id.com/">D-ID</a>: Create and interact with talking
+                            avatars using Generative AI via D-ID’s API or Creative Reality™ studio.
+                        </li>
+                        <li class="list-group-item">
+                            <a target="_blank" href="https://www.heygen.com/">HeyGen</a>: is a generative AI tool
+                            that allows users to produce high-impact videos with talking avatars by uploading images and
+                            audio.
+                        </li>
                         <li class="list-group-item">
                             <a target="_blank" href="https://avatarify.ai/">Avatarify</a> is an open-source project that
                             allows real-time facial reenactment. It can be adapted for lip-syncing purposes to animate a
@@ -730,6 +843,38 @@
         video6.play(); // Play the video
     })
 
+    const video61 = $('#myVideo61').get(0);
+    $('#playButton61').click(() => {
+        pauseVideos();
+        video61.muted = false;
+        video61.play();
+    })
+    $('#pauseButton61').click(() => {
+        video61.muted = false;
+        video61.pause();
+    })
+    $('#restartButton61').click(() => {
+        pauseVideos();
+        video61.currentTime = 0; // Set the current playback time to the beginning
+        video61.play(); // Play the video
+    })
+
+    const video62 = $('#myVideo62').get(0);
+    $('#playButton62').click(() => {
+        pauseVideos();
+        video62.muted = false;
+        video62.play();
+    })
+    $('#pauseButton62').click(() => {
+        video62.muted = false;
+        video62.pause();
+    })
+    $('#restartButton62').click(() => {
+        pauseVideos();
+        video62.currentTime = 0; // Set the current playback time to the beginning
+        video62.play(); // Play the video
+    })
+
     const video7 = $('#myVideo7').get(0);
     $('#playButton7').click(() => {
         pauseVideos();
@@ -753,6 +898,8 @@
         video4.pause();
         video5.pause();
         video6.pause();
+        video61.pause();
+        video62.pause();
         video7.pause();
     }
 </script>
