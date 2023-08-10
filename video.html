@@ -192,8 +192,14 @@
                 }),
             });
             const endTime = performance.now();
-            const timeTaken = (endTime - startTime) / 1000;
-            $('#timeTaken').text(timeTaken.toFixed(2) + ' seconds');
+            const timeTakenSeconds = (endTime - startTime) / 1000;
+            const minutes = Math.floor(timeTakenSeconds / 60);
+            const seconds = (timeTakenSeconds % 60).toFixed(2);
+            let text = (minutes ? (minutes + ' min') : '');
+            if (seconds) {
+                text += " " + seconds + ' secs'
+            }
+            $('#timeTaken').text(text);
             if (!response.ok) {
                 const errorResponse = await response.json(); // Assuming the API returns error details in JSON
                 let errorMessage = errorResponse.message || 'An error occurred.';
