@@ -182,7 +182,7 @@
 
     async function generateVideo(event) {
         event.preventDefault();
-        const apiUrl = 'https://guiding-koala-quickly.ngrok-free.app'; // Replace with your API URL
+        const apiUrl = 'https://topical-turkey-included.ngrok-free.app'; // Replace with your API URL
         $('#loadingAlert').hide();
         $('#errorAlert').hide();
         $('#loadingAlert').fadeIn();
@@ -196,10 +196,9 @@
         $('#image_render').attr('src', imageUrl);
 
         $('#audio_render').attr('src', audioUrl);
-        $('#audio_render')[0].load();
-        $('#audio_render')[0].play();
+        // $('#audio_render')[0].load();
+        // $('#audio_render')[0].play();
         const startTime = performance.now();
-        return;
         try {
             const videoSource = document.getElementById('myVideo');
             const response = await fetch(`${apiUrl}/generate_video`, {
@@ -211,6 +210,7 @@
                     image_url: imageUrl, // Replace with your image URL
                     audio_url: audioUrl, // Replace with your audio URL
                     transparent: true,
+                    batch_size: 2
                 }),
             });
             const endTime = performance.now();
