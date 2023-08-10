@@ -63,7 +63,11 @@
                 <div class="col">
                     <form onsubmit="generateVideo(event)">
                         <div class="mb-3">
-                            <label for="image_url" class="form-label">IMAGE URL</label>
+                            <label for="image_url" class="form-label">IMAGE URL
+                                <div class="text-danger">* Provide image path after making background color green using <a
+                                        href="https://www.photoroom.com/tools/background-remover/green-background" target="_blank">photoroom</a>
+                                </div>
+                            </label>
                             <div class="input-group">
                                 <input type="text" class="form-control" id="image_url" required="required"
                                        aria-describedby="basic-addon3 basic-addon4">
@@ -82,7 +86,7 @@
                                        aria-describedby="basic-addon3 basic-addon4">
                             </div>
                             <audio controls style="margin-top: 10px">
-                                <source src=""  id="audio_render">
+                                <source src="" id="audio_render">
                                 Your browser does not support the audio element.
                             </audio>
                             <div class="form-text">eg:
