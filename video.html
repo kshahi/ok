@@ -71,6 +71,9 @@
                             <div class="form-text">eg:
                                 https://earth9hero.s3.us-east-2.amazonaws.com/development/ai/Pic_Green.png
                             </div>
+                            <img src="" id="image_render" style='height: 300px; width: auto; margin-top: 5px'
+                                 vclass="img-thumbnail"
+                                 alt="...">
                         </div>
                         <div class="mb-3">
                             <label for="audio_url" class="form-label">AUDIO URL</label>
@@ -78,6 +81,10 @@
                                 <input type="text" class="form-control" id="audio_url" required="required"
                                        aria-describedby="basic-addon3 basic-addon4">
                             </div>
+                            <audio controls style="margin-top: 10px">
+                                <source src=""  id="audio_render">
+                                Your browser does not support the audio element.
+                            </audio>
                             <div class="form-text">eg:
                                 https://earth9hero.s3.amazonaws.com/testing/ai/audio/df622e28-8ed2-41a3-b0b3-2bf13b08283b.mp3
                             </div>
@@ -96,7 +103,8 @@
                     <div style="font-family: sans-serif;">
                         <div class="relative" style="font-family: sans-serif; width: 100%; height: 520px">
                             <div style="position:absolute">
-                                <video id="myVideo" class="object-fit-contain" style="width: auto; height: 500px" loop>
+                                <video controls id="myVideo" class="object-fit-contain"
+                                       style="width: auto; height: 500px">
                                     <source src="https://earth9hero.s3.us-east-2.amazonaws.com/development/ai/output_video_v2.webm"
                                             type="video/webm">
                                 </video>
@@ -176,9 +184,19 @@
         $('#loadingAlert').fadeIn();
         $('#generate_btn').prop('disabled', true);
         $('#timeTaken').text(0);
-        const startTime = performance.now();
-        try {
 
+
+        const audioUrl = $('#audio_url').val();
+        const imageUrl = $('#image_url').val();
+
+        $('#image_render').attr('src', imageUrl);
+
+        $('#audio_render').attr('src', audioUrl);
+        $('#audio_render')[0].load();
+        $('#audio_render')[0].play();
+        const startTime = performance.now();
+        return;
+        try {
             const videoSource = document.getElementById('myVideo');
             const response = await fetch(`${apiUrl}/generate_video`, {
                 method: 'POST',
@@ -186,8 +204,8 @@
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    image_url: $('#image_url').val(), // Replace with your image URL
-                    audio_url: $('#audio_url').val(), // Replace with your audio URL
+                    image_url: imageUrl, // Replace with your image URL
+                    audio_url: audioUrl, // Replace with your audio URL
                     transparent: true,
                 }),
             });
