@@ -69,10 +69,25 @@
 <body>
 
 <div class="container py-4">
-  <h2 class="text-center mb-4">Catalina Video Gallery (without upscale)</h2>
+  <h4 class="text-center">Catalina Video Gallery (without upscale)</h4>
+  <h6 class="text-center mb-3">Lora Strength: 1.0</h6>
   <div class="video-grid">
 
     <!-- Card 1 -->
+    <div class="video-card">
+      <video
+        src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/flowedit_primitive_1_00054.mp4"
+        class="video-thumbnail" controls muted></video>
+      <div class="video-body">
+        <div class="video-title">Original Video</div>
+        <div class="video-category">Category:</div>
+        <div class="video-author">Lora Link: <a
+          href="#"
+          target="_blank"></a></div>
+        <div class="video-trigger"></div>
+      </div>
+    </div>
+
     <div class="video-card">
       <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/jixar_ff.mp4"
              class="video-thumbnail" controls muted></video>
@@ -189,8 +204,11 @@
         <div class="video-title">RealisticComicBook_LORA_FLUX</div>
         <div class="video-category">Category: Comic book</div>
         <div class="video-author">Lora Link: <a
-          href="https://civitai.com/models/796588/realisticcomicbookloraflux" target="_blank">RealisticComicBook_LORA_FLUX</a></div>
-        <div class="video-trigger">lora:RealisticComicBook_LORA_FLUX:0> This image is a detailed, digital drawing in a comic book style.</div>
+          href="https://civitai.com/models/796588/realisticcomicbookloraflux" target="_blank">RealisticComicBook_LORA_FLUX</a>
+        </div>
+        <div class="video-trigger">lora:RealisticComicBook_LORA_FLUX:0> This image is a detailed, digital drawing in a
+          comic book style.
+        </div>
       </div>
     </div>
 
@@ -223,6 +241,20 @@
     </div>
 
     <div class="video-card">
+      <!--      <video-->
+      <!--        src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/comic_flux.mp4"-->
+      <!--        class="video-thumbnail" controls muted></video>-->
+      <div class="video-body">
+        <div class="video-title">Anime Lineart / Manga-like (线稿/線画/マンガ風/漫画风) Style</div>
+        <div class="video-category">Category: Comic book</div>
+        <div class="video-author">Lora Link: <a href="https://civitai.com/models/16014/anime-lineart-manga-like-style"
+                                                target="_blank">Anime Lineart / Manga-like (线稿/線画/マンガ風/漫画风)
+          Style</a>
+        </div>
+        <div class="video-trigger">Trigger Word: lineart, monochrome, <\lora:animeoutlineV4_16:1> ,</div>
+      </div>
+    </div>
+    <div class="video-card">
       <video
         src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/comic_flux.mp4"
         class="video-thumbnail" controls muted></video>
@@ -237,8 +269,9 @@
 
 
     <div class="video-card">
-            <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/studio_ghibli.mp4"
-                   class="video-thumbnail" controls muted></video>
+      <video
+        src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/studio_ghibli.mp4"
+        class="video-thumbnail" controls muted></video>
       <div class="video-body">
         <div class="video-title">Ghibli style Flux & PDXL</div>
         <div class="video-category">Category: Ghibli</div>
@@ -248,8 +281,8 @@
       </div>
     </div>
     <div class="video-card">
-            <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/ghibli.mp4"
-                   class="video-thumbnail" controls muted></video>
+      <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/ghibli.mp4"
+             class="video-thumbnail" controls muted></video>
       <div class="video-body">
         <div class="video-title"> Ghibli style Flux</div>
         <div class="video-category">Category: Ghibli</div>
@@ -259,8 +292,9 @@
       </div>
     </div>
     <div class="video-card">
-            <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/gibli_porco.mp4"
-                   class="video-thumbnail" controls muted></video>
+      <video
+        src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/gibli_porco.mp4"
+        class="video-thumbnail" controls muted></video>
       <div class="video-body">
         <div class="video-title"> Retro Ghibli style (Porco Rosso)</div>
         <div class="video-category">Category: Ghibli</div>
@@ -271,21 +305,23 @@
     </div>
 
 
-
     <div class="video-card">
-<!--      <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/gibli_porco.mp4"-->
-<!--             class="video-thumbnail" controls muted></video>-->
+      <!--      <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/gibli_porco.mp4"-->
+      <!--             class="video-thumbnail" controls muted></video>-->
       <div class="video-body">
         <div class="video-title"> Realistic Skin Texture style XL (Detailed Skin) + SD1.5 + Flux1D</div>
         <div class="video-category">Category: Realistic</div>
-        <div class="video-author">Lora Link: <a href="https://civitai.com/models/580857/realistic-skin-texture-style-xl-detailed-skin-sd15-flux1d"
-                                                target="_blank"> Realistic Skin Texture style</a></div>
-        <div class="video-trigger">Trigger Word: UHD, 4k, ultra detailed, cinematic, a photograph of <\lora:skin texture style v5:1> </div>
+        <div class="video-author">Lora Link: <a
+          href="https://civitai.com/models/580857/realistic-skin-texture-style-xl-detailed-skin-sd15-flux1d"
+          target="_blank"> Realistic Skin Texture style</a></div>
+        <div class="video-trigger">Trigger Word: UHD, 4k, ultra detailed, cinematic, a photograph of <\lora:skin texture
+          style v5:1>
+        </div>
       </div>
     </div>
     <div class="video-card">
-<!--      <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/gibli_porco.mp4"-->
-<!--             class="video-thumbnail" controls muted></video>-->
+      <!--      <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/gibli_porco.mp4"-->
+      <!--             class="video-thumbnail" controls muted></video>-->
       <div class="video-body">
         <div class="video-title"> Realistic photograph [FLUX]</div>
         <div class="video-category">Category: Realistic</div>
@@ -295,40 +331,41 @@
       </div>
     </div>
     <div class="video-card">
-<!--      <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/gibli_porco.mp4"-->
-<!--             class="video-thumbnail" controls muted></video>-->
+      <!--      <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/gibli_porco.mp4"-->
+      <!--             class="video-thumbnail" controls muted></video>-->
       <div class="video-body">
         <div class="video-title">Realistic Photos: Detailed Skin&Textures Flux (Detailedskin&textures.safetensors)</div>
         <div class="video-category">Category: Realistic</div>
-        <div class="video-author">Lora Link: <a href="https://civitai.com/models/950148/realistic-photos-detailed-skinandtextures-flux"
-                                                target="_blank"> ealistic Photos: Detailed Skin&Textures Flux </a></div>
+        <div class="video-author">Lora Link: <a
+          href="https://civitai.com/models/950148/realistic-photos-detailed-skinandtextures-flux"
+          target="_blank"> ealistic Photos: Detailed Skin&Textures Flux </a></div>
         <div class="video-trigger">Trigger Word: detailed skin, ultra detailed skin,</div>
       </div>
     </div>
     <div class="video-card">
-<!--      <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/gibli_porco.mp4"-->
-<!--             class="video-thumbnail" controls muted></video>-->
+      <video
+        src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/hollywood_cinematic.mp4"
+        class="video-thumbnail" controls muted></video>
       <div class="video-body">
-        <div class="video-title"> Cinematic Photography Style XL + F1D </div>
+        <div class="video-title"> Cinematic Photography Style XL + F1D</div>
         <div class="video-category">Category: Realistic</div>
-        <div class="video-author">Lora Link: <a href="https://civitai.com/models/214956/cinematic-photography-style-xl-f1d"
-                                                target="_blank"> Cinematic Photography Style XL + F1D </a></div>
-        <div class="video-trigger">Trigger Word: cinematic film still <\lora:Hollywood Cinematic Film style v1:1>      </div>
+        <div class="video-author">Lora Link: <a
+          href="https://civitai.com/models/214956/cinematic-photography-style-xl-f1d"
+          target="_blank"> Cinematic Photography Style XL + F1D </a></div>
+        <div class="video-trigger">Trigger Word: cinematic film still <\lora:Hollywood Cinematic Film style v1:1></div>
       </div>
     </div>
     <div class="video-card">
-<!--      <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/gibli_porco.mp4"-->
-<!--             class="video-thumbnail" controls muted></video>-->
+      <!--      <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/gibli_porco.mp4"-->
+      <!--             class="video-thumbnail" controls muted></video>-->
       <div class="video-body">
-        <div class="video-title"> Amateur Photography </div>
+        <div class="video-title"> Amateur Photography</div>
         <div class="video-category">Category: Realistic</div>
         <div class="video-author">Lora Link: <a href="https://civitai.com/models/652699/amateur-photography-flux-dev"
-                                                target="_blank"> Amateur Photography  </a></div>
-        <div class="video-trigger">Trigger Word:  </div>
+                                                target="_blank"> Amateur Photography </a></div>
+        <div class="video-trigger">Trigger Word:</div>
       </div>
     </div>
-
-
 
 
     <!-- Add more cards below -->
