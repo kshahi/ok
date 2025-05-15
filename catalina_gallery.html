@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Video Cards</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .video-card {
+      width: 100%;
+      max-width: 600px;
+      margin: 10px auto;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+    }
+
+    .video-thumbnail {
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+    }
+
+    .video-body {
+      padding: 16px;
+    }
+
+    .video-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .video-category {
+      font-size: 0.9rem;
+      color: #6c757d;
+    }
+
+    .video-link, .video-author, .video-trigger {
+      font-size: 0.9rem;
+      margin-top: 6px;
+    }
+
+    .video-link a, .video-author a {
+      text-decoration: none;
+      color: #0d6efd;
+    }
+
+    .video-trigger {
+      color: #6c757d;
+      font-style: italic;
+    }
+
+    @media (min-width: 768px) {
+      .video-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container py-4">
+  <h2 class="text-center mb-4">Catalina Video Gallery (without upscale)</h2>
+  <div class="video-grid">
+
+    <!-- Card 1 -->
+    <div class="video-card">
+      <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/jixar_ff.mp4"
+             class="video-thumbnail" controls muted></video>
+      <div class="video-body">
+        <div class="video-title">Jixar 3D Animation</div>
+        <div class="video-category">Category: 3D Animation</div>
+        <div class="video-author">Lora Link: <a href="https://civitai.com/models/650251/3d-pixar-stylejixar-character-design-animation-design-flux" target="_blank">Jixar</a></div>
+        <div class="video-trigger">Trigger Word: No trigger word</div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="video-card">
+      <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/pixar_ff.mp4"
+             class="video-thumbnail" controls muted></video>
+      <div class="video-body">
+        <div class="video-title">Pixar Slider 3D Animation</div>
+        <div class="video-category">Category: 3D Animation</div>
+        <div class="video-author">Lora Link: <a href="https://civitai.com/models/888594/pixar-slider-3d-animation-style-flux" target="_blank">Pixar Slider</a></div>
+        <div class="video-trigger">Trigger Word: No trigger word</div>
+      </div>
+    </div>
+
+
+    <div class="video-card">
+      <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/3d_animated_style.mp4"
+             class="video-thumbnail" controls muted></video>
+      <div class="video-body">
+        <div class="video-title">Flux 3D Animation Style</div>
+        <div class="video-category">Category: 3D Animation</div>
+        <div class="video-author">Lora Link: <a href="https://civitai.com/models/824739/flux-3d-animation-style-lora" target="_blank">Pixar Slider</a></div>
+        <div class="video-trigger">Trigger Word: 3d animation style,</div>
+      </div>
+    </div>
+
+    <!-- Add more cards below -->
+
+  </div>
+</div>
+
+</body>
+</html>
