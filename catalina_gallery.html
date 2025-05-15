@@ -56,6 +56,26 @@
       font-style: italic;
     }
 
+    .step-card {
+      background-color: #ffffff;
+      border: 1px solid #dee2e6;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease;
+    }
+
+    .step-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .step-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
     @media (min-width: 768px) {
       .video-grid {
         display: flex;
@@ -71,6 +91,43 @@
 <div class="container py-4">
   <h4 class="text-center">Catalina Video Gallery (without upscale)</h4>
   <h6 class="text-center mb-3">Lora Strength: 1.0</h6>
+
+  <div class="container py-5">
+    <h3 class="text-center mb-4">Workflow Steps</h3>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="step-card h-100">
+          <h5 class="step-title">Step 1: Flowedit</h5>
+          <p>Replace all the primitive typed wonder objects (e.g. replace circular box by dragon).</p>
+          <p><strong>Model:</strong> WAN 2.1 I2V 720P</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="step-card h-100">
+          <h5 class="step-title">Step 2: Inpainting</h5>
+          <p>Inpaint all the object-typed wonder objects. Provide style to the masked object. Provides consistent face, or clothes for the character</p>
+          <p><strong>Model:</strong> SDXL</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="step-card h-100">
+          <h5 class="step-title">Step 3: Start Image Generation</h5>
+          <p>Provide different visualization styles to the start image (e.g. realistic, anime, etc).</p>
+          <p><strong>Model:</strong> Flux 1D</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="step-card h-100">
+          <h5 class="step-title">Step 4: Final Video Generation</h5>
+          <p>Convert start image and control video into the final video.</p>
+          <p><strong>Model:</strong> WAN 2.1 Fun Control 14B</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
   <div class="video-grid">
 
     <!-- Card 1 -->
@@ -79,12 +136,7 @@
         src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/orignal.mp4"
         class="video-thumbnail" controls muted></video>
       <div class="video-body">
-        <div class="video-title">Original Video</div>
-        <div class="video-category">Category:</div>
-        <div class="video-author">Lora Link: <a
-          href="#"
-          target="_blank"></a></div>
-        <div class="video-trigger"></div>
+        <div class="video-title">1. Original Video</div>
       </div>
     </div>
 
@@ -92,7 +144,7 @@
       <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/jixar_ff.mp4"
              class="video-thumbnail" controls muted></video>
       <div class="video-body">
-        <div class="video-title">Jixar 3D Animation</div>
+        <div class="video-title">2. Jixar 3D Animation</div>
         <div class="video-category">Category: 3D Animation</div>
         <div class="video-author">Lora Link: <a
           href="https://civitai.com/models/650251/3d-pixar-stylejixar-character-design-animation-design-flux"
@@ -106,7 +158,7 @@
       <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/pixar_ff.mp4"
              class="video-thumbnail" controls muted></video>
       <div class="video-body">
-        <div class="video-title">Pixar Slider 3D Animation</div>
+        <div class="video-title">3. Pixar Slider 3D Animation</div>
         <div class="video-category">Category: 3D Animation</div>
         <div class="video-author">Lora Link: <a
           href="https://civitai.com/models/888594/pixar-slider-3d-animation-style-flux" target="_blank">Pixar Slider</a>
@@ -121,7 +173,7 @@
         src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/3d_animated_style.mp4"
         class="video-thumbnail" controls muted></video>
       <div class="video-body">
-        <div class="video-title">Flux 3D Animation Style</div>
+        <div class="video-title">4. Flux 3D Animation Style</div>
         <div class="video-category">Category: 3D Animation</div>
         <div class="video-author">Lora Link: <a href="https://civitai.com/models/824739/flux-3d-animation-style-lora"
                                                 target="_blank">Flux 3D Animation Style</a></div>
@@ -134,7 +186,7 @@
       <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/ani_ani.mp4"
              class="video-thumbnail" controls muted></video>
       <div class="video-body">
-        <div class="video-title">AniAni | score_9 anime style for FLUX</div>
+        <div class="video-title">5. AniAni | score_9 anime style for FLUX</div>
         <div class="video-category">Category: Anime</div>
         <div class="video-author">Lora Link: <a
           href="https://civitai.com/models/998349/aniani-or-score9-anime-style-for-flux" target="_blank">AniAni</a>
@@ -148,7 +200,7 @@
         src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/ani_ani_v2.mp4"
         class="video-thumbnail" controls muted></video>
       <div class="video-body">
-        <div class="video-title">AniAni | score_9 anime style for FLUX (second attempt)</div>
+        <div class="video-title">6. AniAni | score_9 anime style for FLUX (second attempt)</div>
         <div class="video-category">Category: Anime</div>
         <div class="video-author">Lora Link: <a
           href="https://civitai.com/models/998349/aniani-or-score9-anime-style-for-flux" target="_blank">AniAni</a>
@@ -162,7 +214,7 @@
         src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/modern_anime.mp4"
         class="video-thumbnail" controls muted></video>
       <div class="video-body">
-        <div class="video-title">Modern Anime Style [Flux]</div>
+        <div class="video-title">7. Modern Anime Style [Flux]</div>
         <div class="video-category">Category: Anime</div>
         <div class="video-author">Lora Link: <a href="https://civitai.com/models/659965/modern-anime-style-flux"
                                                 target="_blank">Modern Anime</a></div>
@@ -175,7 +227,7 @@
         src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/modern_anime_v2.mp4"
         class="video-thumbnail" controls muted></video>
       <div class="video-body">
-        <div class="video-title">Modern Anime Style [Flux] second attempt</div>
+        <div class="video-title">8. Modern Anime Style [Flux] second attempt</div>
         <div class="video-category">Category: Anime</div>
         <div class="video-author">Lora Link: <a href="https://civitai.com/models/659965/modern-anime-style-flux"
                                                 target="_blank">Modern Anime</a></div>
@@ -188,7 +240,7 @@
         src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/anime_styler_v2.mp4"
         class="video-thumbnail" controls muted></video>
       <div class="video-body">
-        <div class="video-title">Anime_styler_FLUX</div>
+        <div class="video-title">9. Anime_styler_FLUX</div>
         <div class="video-category">Category: Anime</div>
         <div class="video-author">Lora Link: <a href="https://civitai.com/models/755423/animestylerflux"
                                                 target="_blank">Anime_styler_FLUX</a></div>
@@ -201,7 +253,7 @@
         src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/realistic_comic_book.mp4"
         class="video-thumbnail" controls muted></video>
       <div class="video-body">
-        <div class="video-title">RealisticComicBook_LORA_FLUX</div>
+        <div class="video-title">10. RealisticComicBook_LORA_FLUX</div>
         <div class="video-category">Category: Comic book</div>
         <div class="video-author">Lora Link: <a
           href="https://civitai.com/models/796588/realisticcomicbookloraflux" target="_blank">RealisticComicBook_LORA_FLUX</a>
@@ -218,7 +270,7 @@
         src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/classic_comic.mp4"
         class="video-thumbnail" controls muted></video>
       <div class="video-body">
-        <div class="video-title">Eldritch Classic Comics | for Flux</div>
+        <div class="video-title">11. Eldritch Classic Comics | for Flux</div>
         <div class="video-category">Category: Comic book</div>
         <div class="video-author">Lora Link: <a
           href="https://civitai.com/models/1205329/eldritch-classic-comics-or-for-flux" target="_blank">Eldritch Classic
@@ -232,7 +284,7 @@
         src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/comic_style.mp4"
         class="video-thumbnail" controls muted></video>
       <div class="video-body">
-        <div class="video-title">Comic Book Page style (Anime + Manga + Western Comics)</div>
+        <div class="video-title">12. Comic Book Page style (Anime + Manga + Western Comics)</div>
         <div class="video-category">Category: Comic book</div>
         <div class="video-author">Lora Link: <a href="https://civitai.com/models/462611?modelVersionId=841525"
                                                 target="_blank">Comic Book Page style</a></div>
@@ -241,11 +293,11 @@
     </div>
 
     <div class="video-card">
-      <!--      <video-->
-      <!--        src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/comic_flux.mp4"-->
-      <!--        class="video-thumbnail" controls muted></video>-->
+      <video
+        src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/lineart.mp4"
+        class="video-thumbnail" controls muted></video>
       <div class="video-body">
-        <div class="video-title">Anime Lineart / Manga-like (线稿/線画/マンガ風/漫画风) Style</div>
+        <div class="video-title">13. Anime Lineart / Manga-like (线稿/線画/マンガ風/漫画风) Style</div>
         <div class="video-category">Category: Comic book</div>
         <div class="video-author">Lora Link: <a href="https://civitai.com/models/16014/anime-lineart-manga-like-style"
                                                 target="_blank">Anime Lineart / Manga-like (线稿/線画/マンガ風/漫画风)
@@ -259,7 +311,7 @@
         src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/comic_flux.mp4"
         class="video-thumbnail" controls muted></video>
       <div class="video-body">
-        <div class="video-title">Comic_FLUX</div>
+        <div class="video-title">14. Comic_FLUX</div>
         <div class="video-category">Category: Comic book</div>
         <div class="video-author">Lora Link: <a href="https://civitai.com/models/816846/comicflux" target="_blank">Comic_FLUX</a>
         </div>
@@ -273,7 +325,7 @@
         src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/studio_ghibli.mp4"
         class="video-thumbnail" controls muted></video>
       <div class="video-body">
-        <div class="video-title">Ghibli style Flux & PDXL</div>
+        <div class="video-title">15. Ghibli style Flux & PDXL</div>
         <div class="video-category">Category: Ghibli</div>
         <div class="video-author">Lora Link: <a href=" https://civitai.com/models/433138/ghibli-style-flux-and-pdxl"
                                                 target="_blank">Ghibli style Flux & PDXL</a></div>
@@ -284,7 +336,7 @@
       <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/ghibli.mp4"
              class="video-thumbnail" controls muted></video>
       <div class="video-body">
-        <div class="video-title"> Ghibli style Flux</div>
+        <div class="video-title">16. Ghibli style Flux</div>
         <div class="video-category">Category: Ghibli</div>
         <div class="video-author">Lora Link: <a href="https://civitai.com/models/1414930/ghibli-style-flux"
                                                 target="_blank"> Ghibli style Flux </a></div>
@@ -296,7 +348,7 @@
         src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/gibli_porco.mp4"
         class="video-thumbnail" controls muted></video>
       <div class="video-body">
-        <div class="video-title"> Retro Ghibli style (Porco Rosso)</div>
+        <div class="video-title">17. Retro Ghibli style (Porco Rosso)</div>
         <div class="video-category">Category: Ghibli</div>
         <div class="video-author">Lora Link: <a href="https://civitai.com/models/1153088/retro-ghibli-style-porco-rosso"
                                                 target="_blank"> Retro Ghibli style (Porco Rosso) </a></div>
@@ -310,7 +362,7 @@
         src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/detailed_skin_texture.mp4"
         class="video-thumbnail" controls muted></video>
       <div class="video-body">
-        <div class="video-title"> Realistic Skin Texture style XL (Detailed Skin) + SD1.5 + Flux1D</div>
+        <div class="video-title">18. Realistic Skin Texture style XL (Detailed Skin) + SD1.5 + Flux1D</div>
         <div class="video-category">Category: Realistic</div>
         <div class="video-author">Lora Link: <a
           href="https://civitai.com/models/580857/realistic-skin-texture-style-xl-detailed-skin-sd15-flux1d"
@@ -321,10 +373,11 @@
       </div>
     </div>
     <div class="video-card">
-      <!--      <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/gibli_porco.mp4"-->
-      <!--             class="video-thumbnail" controls muted></video>-->
+      <video
+        src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/photograph.mp4"
+        class="video-thumbnail" controls muted></video>
       <div class="video-body">
-        <div class="video-title"> Realistic photograph [FLUX]</div>
+        <div class="video-title">19. Realistic photograph [FLUX]</div>
         <div class="video-category">Category: Realistic</div>
         <div class="video-author">Lora Link: <a href="https://civitai.com/models/1161456/realistic-photograph-flux"
                                                 target="_blank"> Realistic photograph [FLUX]</a></div>
@@ -336,7 +389,8 @@
         src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/skin_texture.mp4"
         class="video-thumbnail" controls muted></video>
       <div class="video-body">
-        <div class="video-title">Realistic Photos: Detailed Skin&Textures Flux (Detailedskin&textures.safetensors)</div>
+        <div class="video-title">20. Realistic Photos: Detailed Skin&Textures Flux (Detailedskin&textures.safetensors)
+        </div>
         <div class="video-category">Category: Realistic</div>
         <div class="video-author">Lora Link: <a
           href="https://civitai.com/models/950148/realistic-photos-detailed-skinandtextures-flux"
@@ -349,7 +403,7 @@
         src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/hollywood_cinematic.mp4"
         class="video-thumbnail" controls muted></video>
       <div class="video-body">
-        <div class="video-title"> Cinematic Photography Style XL + F1D</div>
+        <div class="video-title">21. Cinematic Photography Style XL + F1D</div>
         <div class="video-category">Category: Realistic</div>
         <div class="video-author">Lora Link: <a
           href="https://civitai.com/models/214956/cinematic-photography-style-xl-f1d"
@@ -361,10 +415,20 @@
       <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/amaetuar.mp4"
              class="video-thumbnail" controls muted></video>
       <div class="video-body">
-        <div class="video-title"> Amateur Photography</div>
+        <div class="video-title">22. Amateur Photography</div>
         <div class="video-category">Category: Realistic</div>
         <div class="video-author">Lora Link: <a href="https://civitai.com/models/652699/amateur-photography-flux-dev"
                                                 target="_blank"> Amateur Photography </a></div>
+        <div class="video-trigger">Trigger Word:</div>
+      </div>
+    </div>
+    <div class="video-card">
+      <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/catalina_v1/super_realistic.mp4"
+             class="video-thumbnail" controls muted></video>
+      <div class="video-body">
+        <div class="video-title">23. Upscaled</div>
+        <div class="video-category">Category: Realistic</div>
+        <div class="video-author"></div>
         <div class="video-trigger">Trigger Word:</div>
       </div>
     </div>
