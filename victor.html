@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Video Cards</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .video-card {
+      width: 100%;
+      max-width: 600px;
+      margin: 10px auto;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+    }
+
+    .video-thumbnail {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    .video-body {
+      padding: 16px;
+    }
+
+    .video-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .video-category {
+      font-size: 0.9rem;
+      color: #6c757d;
+    }
+
+    .video-link, .video-author, .video-trigger {
+      font-size: 0.9rem;
+      margin-top: 6px;
+    }
+
+    .video-link a, .video-author a {
+      text-decoration: none;
+      color: #0d6efd;
+    }
+
+    .video-trigger {
+      color: #6c757d;
+      font-style: italic;
+    }
+
+    .step-card {
+      background-color: #ffffff;
+      border: 1px solid #dee2e6;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease;
+    }
+
+    .step-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .step-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    @media (min-width: 768px) {
+      .video-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container py-4">
+  <h4 class="text-center">Victors Video Gallery</h4>
+  <h6 class="text-center">Lora Strength: 1.0</h6>
+  <h6 class="text-center mb-3">Shot link: <a
+    href="https://app.dreamstage.ai/aistoryboard/projects/dbd665e9-2d63-4fcc-8057-e0fdfeadb7b1/episode/7d627d56-6e15-4e1d-92f9-f80ce3606e0e/scenes/2f662e28-9218-45ae-a35c-3f342071cc27/shots/2ee6c439-84ce-4b02-b832-2ac8e4070dec/details/shot-editor/?episodeId=7d627d56-6e15-4e1d-92f9-f80ce3606e0e&sceneId=2f662e28-9218-45ae-a35c-3f342071cc27&shotId=2ee6c439-84ce-4b02-b832-2ac8e4070dec&debuggerMode=true"
+    target="_blank">Victor's Contemplation</a></h6>
+  <div class="video-trigger">Prompt: Transform this into a cinematic exterior shot at Catalina Pier during golden hour,
+    using a digital cinema camera like the ARRI Alexa Mini. Frame it as a medium close-up at eye level. The scene shows
+    Victor, a man in his 30s, pausing and looking out over the ocean with a thoughtful expression. The warm sunlight
+    bathes his face, highlighting a subtle smile and glint of excitement. The ocean behind him is calm, with soft waves
+    moving gently. Include natural ambient sound—waves and breeze. Victor softly says, ‘That could really streamline our
+    workflow. Imagine the time we’d save,’ with a hint of excitement in his voice. Duration: 3 seconds. The mood is
+    contemplative and hopeful.
+  </div>
+
+  <div class="container py-5">
+    <h3 class="text-center mb-4">Workflow Steps</h3>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="step-card h-100">
+          <h5 class="step-title">Step 1: Flowedit</h5>
+          <p>Replace all the primitive typed wonder objects (e.g. replace circular box by dragon).</p>
+          <p><strong>Model:</strong> WAN 2.1 I2V 720P</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="step-card h-100">
+          <h5 class="step-title">Step 2: Inpainting</h5>
+          <p>Inpaint all the object-typed wonder objects. Provide style to the masked object. Provides consistent face,
+            or clothes for the character</p>
+          <p><strong>Model:</strong> SDXL</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="step-card h-100">
+          <h5 class="step-title">Step 3: Start Image Generation</h5>
+          <p>Provide different visualization styles to the start image (e.g. realistic, anime, etc).</p>
+          <p><strong>Model:</strong> Flux 1D</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="step-card h-100">
+          <h5 class="step-title">Step 4: Final Video Generation</h5>
+          <p>Convert start image and control video into the final video.</p>
+          <p><strong>Model:</strong> WAN 2.1 Fun Control 14B</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="video-grid">
+
+    <!-- Card 1 -->
+    <div class="video-card">
+      <video
+        src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/victors_v1/victor_original.mp4"
+        class="video-thumbnail" controls muted></video>
+      <div class="video-body">
+        <div class="video-title">Original Video</div>
+      </div>
+    </div>
+    <div class="video-card">
+      <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/victors_v1/bryan.mp4" class="video-thumbnail" controls muted></video>
+    </div>
+    <div class="video-card">
+      <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/victors_v1/victor_bryan.mp4" class="video-thumbnail" controls muted></video>
+    </div>
+    <div class="video-card">
+      <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/victors_v1/victor_3d_animation_style.mp4" class="video-thumbnail" controls muted></video>
+    </div>
+    <div class="video-card">
+      <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/victors_v1/victor_3dstyl1z3d.mp4" class="video-thumbnail" controls muted></video>
+    </div>
+    <div class="video-card">
+      <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/victors_v1/victor_ani_ani_anime.mp4" class="video-thumbnail" controls muted></video>
+    </div>
+    <div class="video-card">
+      <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/victors_v1/victor_Anime_CRABDM.mp4" class="video-thumbnail" controls muted></video>
+    </div>
+    <div class="video-card">
+      <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/victors_v1/victor_anime_flux.mp4" class="video-thumbnail" controls muted></video>
+    </div>
+    <div class="video-card">
+      <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/victors_v1/victor_anime_styler_v2.mp4" class="video-thumbnail" controls muted></video>
+    </div>
+    <div class="video-card">
+      <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/victors_v1/victor_anime_styler.mp4" class="video-thumbnail" controls muted></video>
+    </div>
+    <div class="video-card">
+      <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/victors_v1/victor_caricature.mp4" class="video-thumbnail" controls muted></video>
+    </div>
+    <div class="video-card">
+      <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/victors_v1/victor_chinese.mp4" class="video-thumbnail" controls muted></video>
+    </div>
+    <div class="video-card">
+      <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/victors_v1/victor_classic_comic.mp4" class="video-thumbnail" controls muted></video>
+    </div>
+    <div class="video-card">
+      <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/victors_v1/victor_Cute_3d_Cartoon_Flux.mp4" class="video-thumbnail" controls muted></video>
+    </div>
+    <div class="video-card">
+      <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/victors_v1/victor_fairy_tales.mp4" class="video-thumbnail" controls muted></video>
+    </div>
+    <div class="video-card">
+      <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/victors_v1/victor_flat_color.mp4" class="video-thumbnail" controls muted></video>
+    </div>
+    <div class="video-card">
+      <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/victors_v1/victor_game_map.mp4" class="video-thumbnail" controls muted></video>
+    </div>
+    <div class="video-card">
+      <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/victors_v1/victor_ghblic.mp4" class="video-thumbnail" controls muted></video>
+    </div>
+    <div class="video-card">
+      <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/victors_v1/victor_juaNR_CLAY.mp4" class="video-thumbnail" controls muted></video>
+    </div>
+    <div class="video-card">
+      <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/victors_v1/victor_MuratDilmanov_FLUX_PAseer.mp4" class="video-thumbnail" controls muted></video>
+    </div>
+    <div class="video-card">
+      <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/victors_v1/victor_noir_style.mp4" class="video-thumbnail" controls muted></video>
+    </div>
+    <div class="video-card">
+      <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/victors_v1/victor_PaintedComicFLUX-000015.mp4" class="video-thumbnail" controls muted></video>
+    </div>
+    <div class="video-card">
+      <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/victors_v1/victor_realistic.mp4" class="video-thumbnail" controls muted></video>
+    </div>
+    <div class="video-card">
+      <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/victors_v1/victor_Storyboard_sketch--FLUX.mp4" class="video-thumbnail" controls muted></video>
+    </div>
+    <div class="video-card">
+      <video src="https://aitaskassembly.s3.us-east-2.amazonaws.com/comfyui-test/visuals-type/victors_v1/victor_Wiz-VintageComic-Underground-Flux.mp4" class="video-thumbnail" controls muted></video>
+    </div>
+
+
+
+    <!-- Add more cards below -->
+
+  </div>
+</div>
+
+</body>
+</html>
