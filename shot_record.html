@@ -25,6 +25,25 @@
     <div id="shotsContainer"></div>
 </div>
 
+<!-- Delete Confirmation Modal -->
+<div class="modal fade" id="deleteShotModal" tabindex="-1" aria-labelledby="deleteShotLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteShotLabel">Delete Shot</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete this shot?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button id="confirmDeleteBtn" type="button" class="btn btn-danger">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Add Shot Modal -->
 <div class="modal fade" id="addShotModal" tabindex="-1" aria-labelledby="addShotLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -97,6 +116,28 @@
         loadShots();
     }
 
+    let shotIdToDelete = null;
+
+    function showDeleteModal(shotId) {
+        shotIdToDelete = shotId;
+        const deleteModal = new bootstrap.Modal(document.getElementById('deleteShotModal'));
+        deleteModal.show();
+    }
+
+    document.getElementById('confirmDeleteBtn').addEventListener('click', async () => {
+        if (!shotIdToDelete) return;
+
+        try {
+            await shotsRef.doc(shotIdToDelete).delete();
+            shotIdToDelete = null;
+            bootstrap.Modal.getInstance(document.getElementById('deleteShotModal')).hide();
+            loadShots();
+        } catch (error) {
+            console.error("Error deleting shot:", error);
+            alert("Failed to delete the shot. Please try again.");
+        }
+    });
+
     function formatDate(date) {
         const d = new Date(date.seconds ? date.seconds * 1000 : date);
         return d.toLocaleString();
@@ -105,7 +146,7 @@
     // Helper to format date as e.g. "May 23, 2025"
     function formatDay(date) {
         const d = new Date(date.seconds ? date.seconds * 1000 : date);
-        return d.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
+        return d.toLocaleDateString(undefined, {year: 'numeric', month: 'long', day: 'numeric'});
     }
 
     async function loadShots() {
@@ -125,7 +166,7 @@
                 const data = doc.data();
                 const day = formatDay(data.createdAt);
                 if (!shotsByDay[day]) shotsByDay[day] = [];
-                shotsByDay[day].push({ id: doc.id, ...data });
+                shotsByDay[day].push({id: doc.id, ...data});
             });
 
             // Render groups
@@ -178,7 +219,6 @@
             loading.style.display = 'none';
         }
     }
-
 
 
     loadShots();
