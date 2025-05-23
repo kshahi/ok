@@ -102,23 +102,47 @@
         return d.toLocaleString();
     }
 
+    // Helper to format date as e.g. "May 23, 2025"
+    function formatDay(date) {
+        const d = new Date(date.seconds ? date.seconds * 1000 : date);
+        return d.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
+    }
+
     async function loadShots() {
         const loading = document.getElementById('loading');
         const container = document.getElementById('shotsContainer');
 
-        loading.style.display = 'block';   // Show loading spinner
-        container.innerHTML = '';           // Clear container
+        loading.style.display = 'block';
+        container.innerHTML = '';
 
         try {
             const snapshot = await shotsRef.orderBy("createdAt", "desc").get();
 
+            // Group shots by day
+            const shotsByDay = {};
+
             snapshot.forEach(doc => {
                 const data = doc.data();
-                const starStr = '⭐'.repeat(data.stars || 1);
+                const day = formatDay(data.createdAt);
+                if (!shotsByDay[day]) shotsByDay[day] = [];
+                shotsByDay[day].push({ id: doc.id, ...data });
+            });
 
-                const card = document.createElement('div');
-                card.className = "card mb-2 shadow-sm";
-                card.innerHTML = `
+            // Render groups
+            for (const day of Object.keys(shotsByDay)) {
+                // Day heading
+                const dayHeader = document.createElement('h5');
+                dayHeader.className = "mt-4 mb-2 text-secondary";
+                dayHeader.textContent = day;
+                container.appendChild(dayHeader);
+
+                // Shots for that day
+                shotsByDay[day].forEach(data => {
+                    const starStr = '⭐'.repeat(data.stars || 1);
+
+                    const card = document.createElement('div');
+                    card.className = "card mb-2 shadow-sm";
+                    card.innerHTML = `
       <div class="card-body py-2 px-3">
         <div class="d-flex justify-content-between align-items-center">
           <div style="flex: 1;">
@@ -143,14 +167,15 @@
         </div>
       </div>
     `;
-                container.appendChild(card);
-            });
+                    container.appendChild(card);
+                });
+            }
 
         } catch (error) {
             console.error("Error loading shots: ", error);
             container.innerHTML = '<p class="text-danger">Failed to load shots. Please try again.</p>';
         } finally {
-            loading.style.display = 'none';  // Hide loading spinner when done
+            loading.style.display = 'none';
         }
     }
 
