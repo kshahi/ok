@@ -1,85 +1,195 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>VIDEO GENERATION SERVERS</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+    />
+    <style>
+        body {
+            background: #f8f9fa;
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .server-card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            cursor: default;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgb(0 0 0 / 0.1);
+            padding: 1rem 1.25rem;
+            min-height: auto;
+            background: white;
+        }
+        .server-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 32px rgb(0 0 0 / 0.15);
+        }
+        .server-bottom-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        a.server-url {
+            font-weight: 600;
+            font-size: 0.9rem;
+            flex: 1 1 auto;
+            margin-right: 1rem;
+            color: #0d6efd;
+            text-decoration: none;
+            word-break: break-all;
+        }
+        a.server-url:hover {
+            color: #0a58ca;
+            text-decoration: underline;
+        }
+        .status-server-info {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem; /* space between badge and server */
+            min-width: 120px;
+            justify-content: flex-end;
+            font-size: 0.85rem;
+            color: #6c757d;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .status-badge {
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 0.25em 0.7em;
+            border-radius: 20px;
+            text-transform: capitalize;
+            user-select: none;
+            white-space: nowrap;
+        }
+        .status-busy {
+            background: #ffc107;
+            color: #3a3a00;
+            box-shadow: 0 0 8px #ffc107aa;
+        }
+        .status-unavailable {
+            background: #dc3545;
+            color: white;
+            box-shadow: 0 0 8px #dc3545aa;
+        }
+        .status-available {
+            background: #198754;
+            color: white;
+            box-shadow: 0 0 8px #198754aa;
+        }
+        small.text-muted {
+            margin-top: 2px;
+            color: #6c757d;
+        }
+        .refresh-btn {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        footer {
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #6c757d;
+            text-align: center;
+        }
+    </style>
 </head>
-<body class="bg-light">
+<body>
+<div class="container py-5">
+    <h1 class="text-center mb-4 fw-bold text-primary">
+        VIDEO GENERATION SERVERS
+    </h1>
 
-<div class="container mt-5">
-    <h1 class="mb-4 text-center">VIDEO GENERATION SERVERS</h1>
-
-    <div class="d-flex justify-content-end mb-3">
-        <button class="btn btn-primary" onclick="fetchServerStatus()">🔄 Refresh</button>
+    <div class="d-flex justify-content-center mb-4">
+        <button class="btn btn-primary refresh-btn" onclick="fetchServerStatus()">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 width="20" height="20" fill="currentColor" class="bi bi-arrow-clockwise me-2" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
+                <path d="M8 1a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 1z"/>
+            </svg>
+            Refresh
+        </button>
     </div>
 
-    <div class="table-responsive">
-        <table class="table table-bordered table-hover text-center align-middle">
-            <thead class="table-dark">
-            <tr>
-                <th>Name</th>
-                <th>URL</th>
-                <th>Status</th>
-                <th>Server</th>
-            </tr>
-            </thead>
-            <tbody id="server-table-body">
-            <!-- Dynamic content goes here -->
-            </tbody>
-        </table>
+    <div id="servers-container" class="row g-3">
+        <!-- Server cards injected here -->
     </div>
+
+    <footer>
+        &copy; 2025 DreamStage
+    </footer>
 </div>
 
 <script>
-    const endpoint = 'https://yq2ananbukv27z-8025.proxy.runpod.net/servers/status';
+    const endpoint = 'http://localhost:8025/servers/status';
+
+    function getStatusClass(status) {
+        switch (status) {
+            case 'busy':
+                return 'status-busy';
+            case 'unavailable':
+                return 'status-unavailable';
+            case 'available':
+                return 'status-available';
+            default:
+                return 'bg-secondary text-white';
+        }
+    }
 
     async function fetchServerStatus() {
-        const tbody = document.getElementById('server-table-body');
-        tbody.innerHTML = '<tr><td colspan="4">Loading...</td></tr>';
+        const container = document.getElementById('servers-container');
+        container.innerHTML = `
+        <div class="d-flex justify-content-center align-items-center w-100" style="min-height: 120px;">
+          <div class="spinner-border text-primary" role="status" aria-hidden="true"></div>
+          <span class="ms-3 fw-semibold text-primary">Loading servers...</span>
+        </div>
+      `;
 
         try {
-            const response = await fetch(endpoint);
-            const data = await response.json();
+            const res = await fetch(endpoint);
+            if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+            const servers = await res.json();
 
-            if (!Array.isArray(data)) {
-                throw new Error('Invalid data format');
+            if (!Array.isArray(servers)) {
+                throw new Error('Unexpected response format');
             }
 
-            tbody.innerHTML = '';
+            if (servers.length === 0) {
+                container.innerHTML = `<p class="text-center text-muted fs-5">No servers found.</p>`;
+                return;
+            }
 
-            data.forEach(server => {
-                const row = document.createElement('tr');
-
-                row.innerHTML = `
-            <td>${server.name}</td>
-            <td><a href="${server.url}" target="_blank">${server.url}</a></td>
-            <td>
-              <span class="badge bg-${getStatusColor(server.status)}">${server.status}</span>
-            </td>
-            <td>${server.server || '-'}</td>
-          `;
-
-                tbody.appendChild(row);
-            });
+            container.innerHTML = servers
+                .map(({ name, url, status, server }) => `
+            <div class="col-12 col-md-6">
+              <div class="server-card">
+                <h5 class="mb-2 fw-semibold">${name}</h5>
+                <div class="server-bottom-row">
+                  <a href="${url}" target="_blank" rel="noopener" class="server-url">${url}</a>
+                  <div class="status-server-info">
+                      <span class="status-badge ${getStatusClass(status)}">${status}</span>
+                      <small title="${server || '-'}">${server || '-'}</small>
+                    </div>
+                </div>
+              </div>
+            </div>
+          `)
+                .join('');
 
         } catch (error) {
-            tbody.innerHTML = `<tr><td colspan="4" class="text-danger">Error loading data: ${error.message}</td></tr>`;
+            container.innerHTML = `
+          <div class="alert alert-danger text-center" role="alert">
+            Failed to load servers: ${error.message}
+          </div>
+        `;
         }
     }
 
-    function getStatusColor(status) {
-        switch (status) {
-            case 'busy': return 'warning';
-            case 'unavailable': return 'danger';
-            case 'available': return 'success';
-            default: return 'secondary';
-        }
-    }
-
-    // Initial load
+    // Load initially
     fetchServerStatus();
 </script>
-
 </body>
 </html>
