@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VIDEO GENERATION SERVERS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+    <h1 class="mb-4 text-center">VIDEO GENERATION SERVERS</h1>
+
+    <div class="d-flex justify-content-end mb-3">
+        <button class="btn btn-primary" onclick="fetchServerStatus()">🔄 Refresh</button>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover text-center align-middle">
+            <thead class="table-dark">
+            <tr>
+                <th>Name</th>
+                <th>URL</th>
+                <th>Status</th>
+                <th>Server</th>
+            </tr>
+            </thead>
+            <tbody id="server-table-body">
+            <!-- Dynamic content goes here -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    const endpoint = 'https://yq2ananbukv27z-8025.proxy.runpod.net/servers/status';
+
+    async function fetchServerStatus() {
+        const tbody = document.getElementById('server-table-body');
+        tbody.innerHTML = '<tr><td colspan="4">Loading...</td></tr>';
+
+        try {
+            const response = await fetch(endpoint);
+            const data = await response.json();
+
+            if (!Array.isArray(data)) {
+                throw new Error('Invalid data format');
+            }
+
+            tbody.innerHTML = '';
+
+            data.forEach(server => {
+                const row = document.createElement('tr');
+
+                row.innerHTML = `
+            <td>${server.name}</td>
+            <td><a href="${server.url}" target="_blank">${server.url}</a></td>
+            <td>
+              <span class="badge bg-${getStatusColor(server.status)}">${server.status}</span>
+            </td>
+            <td>${server.server || '-'}</td>
+          `;
+
+                tbody.appendChild(row);
+            });
+
+        } catch (error) {
+            tbody.innerHTML = `<tr><td colspan="4" class="text-danger">Error loading data: ${error.message}</td></tr>`;
+        }
+    }
+
+    function getStatusColor(status) {
+        switch (status) {
+            case 'busy': return 'warning';
+            case 'unavailable': return 'danger';
+            case 'available': return 'success';
+            default: return 'secondary';
+        }
+    }
+
+    // Initial load
+    fetchServerStatus();
+</script>
+
+</body>
+</html>
