@@ -157,7 +157,8 @@
               <th scope="col" style="width: 45%;">Pod URL</th>
               <th scope="col" style="width: 15%;">Status</th>
               <th scope="col" style="width: 15%;">View Logs</th>
-              <th scope="col" style="width: 15%;">Triggered From</th>
+              <th scope="col" style="width: 15%;">Folders</th>
+              <th scope="col" style="width: 15%;">From</th>
             </tr>
           </thead>
           <tbody>
@@ -169,6 +170,7 @@
                   <span class="status-badge ${getStatusClass(status)}">${status}</span>
                 </td>
                  <td><a href="${url}/api/logs/" target="_blank" rel="noopener" class="server-url">📝 Logs</a></td>
+                 <td><a href="${url}/folders/" target="_blank" rel="noopener" class="server-url">📂 Folders</a></td>
                 <td>
                   <small class="server-info" title="${server || '-'}">${server || '-'}</small>
                 </td>
